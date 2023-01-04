@@ -1,0 +1,309 @@
+
+serve_server_wellknown: true
+
+
+tls_certificate_path: "/usr/local/etc/selfsignedcerts/homeserver.tls.crt"
+
+# PEM encoded private key for TLS
+tls_private_key_path: "/usr/local/etc/selfsignedcerts/homeserver.tls.key"
+
+# PEM dh parameters for ephemeral keys
+tls_dh_params_path: "/usr/local/etc/selfsignedcerts/dhparam.pem"
+
+# Don't bind to the https port
+no_tls: False
+
+tls_fingerprints: []
+
+
+## Server ##
+
+pid_file: "/var/run/matrix-synapse.pid"
+
+public_baseurl: https://matrix.mydomain.vpn/
+
+soft_file_limit: 0
+
+federation_ip_range_blacklist:
+  - '127.0.0.0/8'
+  - '10.0.0.0/8'
+  - '172.16.0.0/12'
+  - '192.168.0.0/16'
+  - '100.64.0.0/10'
+  - '169.254.0.0/16'
+  - '::1/128'
+  - 'fe80::/64'
+  - 'fc00::/7'
+
+listeners:
+
+  # Main HTTPS listener
+  # For when matrix traffic is sent directly to synapse.
+#  -
+#    # The port to listen for HTTPS requests on.
+#    port: 8448
+#
+#    # Local addresses to listen on.
+#    bind_addresses: ['127.0.0.1', '10.8.0.31']
+#
+#    # This is a 'http' listener, allows us to specify 'resources'.
+#    type: http
+#
+#    tls: true
+#
+#    # Use the X-Forwarded-For (XFF) header as the client IP and not the actual client IP.
+#    x_forwarded: false
+#
+#    # List of HTTP resources to serve on this listener.
+#    resources:
+#      - names: [client]
+#        compress: true
+#      - names: [federation]
+#        compress: false
+
+    # optional list of additional endpoints which can be loaded via
+    # dynamic modules
+    # additional_resources:
+    #   "/_matrix/my/custom/endpoint":
+    #     module: my_module.CustomRequestHandler
+    #     config: {}
+
+
+
+
+  # Unsecure HTTP listener,
+  # For when matrix traffic passes through loadbalancer that unwraps TLS.
+  - port: 8008
+    tls: false
+    bind_addresses: ['127.0.0.1'] #,'10.8.0.31']
+    type: http
+
+    x_forwarded: true
+
+    resources:
+      - names: [client]
+        compress: true
+      - names: [federation]
+        compress: false
+
+
+
+
+
+  # Turn on the twisted ssh manhole service on localhost on the given port.
+  - port: 9000
+    bind_addresses: ['127.0.0.1']
+    type: manhole
+
+
+# Database configuration
+database:
+   name: "psycopg2"
+   args:
+      user: synapse
+      password: secretdatabasepassword
+      database: synapse
+      host: db.mydomain.vpn
+      cp_min: 5
+      cp_max: 10
+      
+      # seconds of inactivity after which TCP should send a keepalive message to the server
+      keepalives_idle: 10
+
+      # the number of seconds after which a TCP keepalive message that is not acknowledged by the server should be retransmitted
+      keepalives_interval: 10
+
+      # the number of TCP keepalives that can be lost before the client's connection to the server is considered dead
+      keepalives_count: 3
+      
+
+# Number of events to cache in memory.
+event_cache_size: "10K"
+
+# A yaml python logging config file
+log_config: "/etc/matrix-synapse/log.yaml"
+
+
+## Media Store ##
+
+# Directory where uploaded images and attachments are stored.
+media_store_path: "/data/local/media/synapse"
+
+# Directory where in-progress uploads are stored.
+uploads_path: "/data/local/media/synapse/uploads"
+
+# The largest allowed upload size in bytes
+max_upload_size: "100M"
+
+# Maximum number of pixels that will be thumbnailed
+max_image_pixels: "32M"
+
+dynamic_thumbnails: false
+
+# List of thumbnail to precalculate when an image is uploaded.
+thumbnail_sizes:
+- width: 32
+  height: 32
+  method: crop
+- width: 96
+  height: 96
+  method: crop
+- width: 320
+  height: 240
+  method: scale
+- width: 640
+  height: 480
+  method: scale
+- width: 800
+  height: 600
+  method: scale
+
+url_preview_enabled: False
+
+max_spider_size: "10M"
+
+url_preview_accept_language:
+
+
+## Captcha ##
+
+# This Home Server's ReCAPTCHA public key.
+recaptcha_public_key: "YOUR_PUBLIC_KEY"
+
+# This Home Server's ReCAPTCHA private key.
+recaptcha_private_key: "YOUR_PRIVATE_KEY"
+
+# Enables ReCaptcha checks when registering, preventing signup
+# unless a captcha is answered. Requires a valid ReCaptcha
+# public/private key.
+enable_registration_captcha: False
+
+# The API endpoint to use for verifying m.login.recaptcha responses.
+recaptcha_siteverify_api: "https://www.google.com/recaptcha/api/siteverify"
+
+
+## TURN ##
+
+# The public URIs of the TURN server to give to clients
+turn_uris: []
+
+# The shared secret used to compute passwords for the TURN server
+turn_shared_secret: "YOUR_SHARED_SECRET"
+
+# How long generated TURN credentials last
+turn_user_lifetime: "1h"
+
+turn_allow_guests: False
+
+
+## Registration ##
+
+# Enable registration for new users.
+enable_registration: false
+
+account_validity:
+
+registration_shared_secret: "supersecretregistrationkey"
+
+bcrypt_rounds: 12
+
+allow_guest_access: False
+
+trusted_third_party_id_servers:
+    - matrix.org
+    - vector.im
+    - riot.im
+
+account_threepid_delegates:
+
+
+## Metrics ###
+enable_metrics: False
+
+## API Configuration ##
+
+# A list of event types that will be included in the room_invite_state
+room_invite_state_types:
+    - "m.room.join_rules"
+    - "m.room.canonical_alias"
+    - "m.room.avatar"
+    - "m.room.encryption"
+    - "m.room.name"
+
+
+# A list of application service config file to use
+app_service_config_files: []
+
+
+# macaroon_secret_key: <PRIVATE STRING>
+macaroon_secret_key: "supersecretmacaroonkey"
+
+# Used to enable access token expiration.
+expire_access_token: False
+
+## Signing Keys ##
+
+# Path to the signing key to sign messages with
+signing_key_path: "/etc/matrix-synapse/homeserver.signing.key"
+
+old_signing_keys: {}
+
+key_refresh_interval: "1d" # 1 Day.
+
+trusted_key_servers:
+  - server_name: "matrix.org"
+
+# Uncomment the following to disable the warning that is emitted when the
+# trusted_key_servers include 'matrix.org'. See above.
+#
+suppress_key_server_warning: true
+
+
+
+## Single sign-on integration ##
+
+saml2_config:
+  user_mapping_provider:
+    config:
+
+oidc_config:
+  user_mapping_provider:
+    config:
+      localpart_template: "{{ user.preferred_username }}"
+
+sso:
+
+# Enable password for login.
+password_config:
+   enabled: true
+
+   # Uncomment and change to a secret random string for extra security.
+   # DO NOT CHANGE THIS AFTER INITIAL SETUP!
+   #
+   #pepper: "EVEN_MORE_SECRET"
+
+   policy:
+
+
+email:
+#   enable_notifs: false
+   smtp_host: "mail.mydomain.vpn"
+   smtp_port: 25
+   smtp_user: "admin@mydomain.vpn"
+   smtp_pass: "supersecretemailpassword"
+   require_transport_security: true
+   notif_from: "Matrix"
+   app_name: Matrix
+   template_dir: "/etc/matrix-synapse/templates"
+#res/templates
+   notif_template_html: notif_mail.html
+   notif_template_text: notif_mail.txt
+   notif_for_new_users: True
+#   riot_base_url: "http://localhost/riot"
+
+
+spam_checker:
+
+# Whether to allow non server admins to create groups on this server
+enable_group_creation: false
+
