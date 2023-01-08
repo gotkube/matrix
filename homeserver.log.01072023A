@@ -1,0 +1,110 @@
+2023-01-07 20:55:31,778 - root - 322 - WARNING - None- ***** STARTING SERVER *****
+2023-01-07 20:55:31,781 - root - 323 - WARNING - None- Server /usr/lib/python3/dist-packages/synapse/app/homeserver.py version 1.28.0
+2023-01-07 20:55:31,783 - root - 324 - INFO - None- Server hostname: matrix
+2023-01-07 20:55:31,786 - root - 325 - INFO - None- Instance name: master
+2023-01-07 20:55:31,787 - synapse.app.homeserver - 357 - INFO - None- Setting up server
+2023-01-07 20:55:31,789 - synapse.server - 274 - INFO - None- Setting up.
+2023-01-07 20:55:32,094 - synapse.storage.databases - 50 - INFO - None- [database config 'master']: Checking database server
+2023-01-07 20:55:32,120 - synapse.storage.databases - 56 - INFO - None- [database config 'master']: Preparing for databases ['main', 'state']
+2023-01-07 20:55:32,127 - synapse.storage.prepare_database - 100 - INFO - None- ['main', 'state']: Checking existing schema version
+2023-01-07 20:55:32,651 - synapse.storage.prepare_database - 109 - INFO - None- ['main', 'state']: Existing schema is 59 (+11 deltas)
+2023-01-07 20:55:32,663 - synapse.storage.databases.main - 379 - INFO - None- Checking database for consistency with configuration...
+2023-01-07 20:55:32,669 - synapse.storage.prepare_database - 376 - INFO - None- Applying schema deltas for v59
+2023-01-07 20:55:32,716 - synapse.storage.prepare_database - 501 - INFO - None- Schema now up to date
+2023-01-07 20:55:32,777 - synapse.storage.databases - 69 - INFO - None- [database config 'master']: Starting 'main' database
+2023-01-07 20:55:32,779 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for presence_stream(stream_id)
+2023-01-07 20:55:32,787 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for public_room_list_stream(stream_id)
+2023-01-07 20:55:32,793 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for device_lists_stream(stream_id)
+2023-01-07 20:55:32,798 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for user_signature_stream(stream_id)
+2023-01-07 20:55:32,803 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for device_lists_outbound_pokes(stream_id)
+2023-01-07 20:55:32,808 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for e2e_cross_signing_keys(stream_id)
+2023-01-07 20:55:32,813 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for event_reports(id)
+2023-01-07 20:55:32,818 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for push_rules(id)
+2023-01-07 20:55:32,848 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for push_rules_enable(id)
+2023-01-07 20:55:32,853 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for local_group_updates(stream_id)
+2023-01-07 20:55:32,930 - synapse.storage.databases.main.event_push_actions - 538 - INFO - None- Searching for stream ordering 1 month ago
+2023-01-07 20:55:32,948 - synapse.storage.databases.main.event_push_actions - 543 - INFO - None- Found stream ordering 1 month ago: it's 2
+2023-01-07 20:55:32,950 - synapse.storage.databases.main.event_push_actions - 545 - INFO - None- Searching for stream ordering 1 day ago
+2023-01-07 20:55:32,967 - synapse.storage.databases.main.event_push_actions - 550 - INFO - None- Found stream ordering 1 day ago: it's 35
+2023-01-07 20:55:33,152 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for pushers(id)
+2023-01-07 20:55:33,158 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for deleted_pushers(stream_id)
+2023-01-07 20:55:33,174 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for push_rules_stream(stream_id)
+2023-01-07 20:55:33,204 - synapse.storage.util.id_generators - 56 - INFO - None- initialising stream generator for access_tokens(id)
+2023-01-07 20:55:33,223 - synapse.storage.databases - 86 - INFO - None- [database config 'master']: Starting 'state' database
+2023-01-07 20:55:33,305 - synapse.storage.databases - 100 - INFO - None- [database config 'master']: prepared
+2023-01-07 20:55:33,307 - synapse.server - 277 - INFO - None- Finished setting up.
+2023-01-07 20:55:33,408 - synapse.push.pusher - 39 - INFO - None- email enable notifs: False
+2023-01-07 20:55:33,559 - synapse.handlers.auth - 200 - INFO - None- Extra password_providers: []
+2023-01-07 20:55:33,633 - synapse.federation.federation_server - 887 - INFO - None- Registering federation EDU handler for 'm.device_list_update'
+2023-01-07 20:55:33,646 - synapse.federation.federation_server - 907 - INFO - None- Registering federation query handler for 'profile'
+2023-01-07 20:55:33,707 - synapse.federation.federation_server - 887 - INFO - None- Registering federation EDU handler for 'm.presence'
+2023-01-07 20:55:33,723 - synapse.federation.federation_server - 887 - INFO - None- Registering federation EDU handler for 'm.typing'
+2023-01-07 20:55:33,781 - synapse.federation.federation_server - 907 - INFO - None- Registering federation query handler for 'directory'
+2023-01-07 20:55:33,906 - synapse.app.homeserver - 115 - INFO - None- Running
+2023-01-07 20:55:33,909 - synapse.app.homeserver - 30 - INFO - None- Set file limit to: 524288
+2023-01-07 20:55:33,956 - synapse.handlers.deactivate_account - 201 - INFO - user_parter_loop-0- Starting user parter
+2023-01-07 20:55:34,266 - synapse.push.mailer - 121 - INFO - None- Created Mailer for app_name Matrix
+2023-01-07 20:55:34,298 - synapse.push.mailer - 121 - INFO - None- Created Mailer for app_name Matrix
+2023-01-07 20:55:34,324 - synapse.push.mailer - 121 - INFO - None- Created Mailer for app_name Matrix
+2023-01-07 20:55:34,366 - synapse.federation.federation_server - 887 - INFO - None- Registering federation EDU handler for 'm.receipt'
+2023-01-07 20:55:34,378 - synapse.federation.federation_server - 887 - INFO - None- Registering federation EDU handler for 'org.matrix.signing_key_update'
+2023-01-07 20:55:34,380 - synapse.federation.federation_server - 907 - INFO - None- Registering federation query handler for 'client_keys'
+2023-01-07 20:55:34,395 - synapse.federation.federation_server - 887 - INFO - None- Registering federation EDU handler for 'm.direct_to_device'
+2023-01-07 20:55:38,222 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <synapse.rest.health.HealthResource object at 0x72f98f90> to path b'/health'
+2023-01-07 20:55:38,223 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <twisted.web.resource.EncodingResourceWrapper object at 0x727625d0> to path b'/_matrix/client/api/v1'
+2023-01-07 20:55:38,224 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <twisted.web.resource.EncodingResourceWrapper object at 0x727625d0> to path b'/_matrix/client/r0'
+2023-01-07 20:55:38,225 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <twisted.web.resource.EncodingResourceWrapper object at 0x727625d0> to path b'/_matrix/client/unstable'
+2023-01-07 20:55:38,226 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <twisted.web.resource.EncodingResourceWrapper object at 0x727625d0> to path b'/_matrix/client/v2_alpha'
+2023-01-07 20:55:38,226 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <twisted.web.resource.EncodingResourceWrapper object at 0x727625d0> to path b'/_matrix/client/versions'
+2023-01-07 20:55:38,227 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <synapse.rest.well_known.WellKnownResource object at 0x727625f0> to path b'/.well-known/matrix/client'
+2023-01-07 20:55:38,228 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <synapse.rest.admin.AdminRestResource object at 0x72762610> to path b'/_synapse/admin'
+2023-01-07 20:55:38,229 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <synapse.rest.synapse.client.pick_idp.PickIdpResource object at 0x7276a2f0> to path b'/_synapse/client/pick_idp'
+2023-01-07 20:55:38,230 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <twisted.web.resource.Resource object at 0x72fc7050> to path b'/_synapse/client/pick_username'
+2023-01-07 20:55:38,230 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <synapse.rest.synapse.client.new_user_consent.NewUserConsentResource object at 0x72762e90> to path b'/_synapse/client/new_user_consent'
+2023-01-07 20:55:38,231 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <synapse.rest.synapse.client.sso_register.SsoRegisterResource object at 0x7276a4d0> to path b'/_synapse/client/sso_register'
+2023-01-07 20:55:38,232 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <synapse.rest.synapse.client.password_reset.PasswordResetSubmitTokenResource object at 0x72fc77f0> to path b'/_synapse/client/password_reset/email/submit_token'
+2023-01-07 20:55:38,233 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching FilePath('/usr/lib/python3/dist-packages/synapse/static') to path b'/_matrix/static'
+2023-01-07 20:55:38,234 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <synapse.rest.media.v1.media_repository.MediaRepositoryResource object at 0x72751550> to path b'/_matrix/media/r0'
+2023-01-07 20:55:38,235 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <synapse.rest.media.v1.media_repository.MediaRepositoryResource object at 0x72751550> to path b'/_matrix/media/v1'
+2023-01-07 20:55:38,236 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <synapse.federation.transport.server.TransportLayerServer object at 0x72fb8d10> to path b'/_matrix/federation'
+2023-01-07 20:55:38,236 - synapse.util.httpresourcetree - 46 - INFO - None- Attaching <synapse.rest.key.v2.KeyApiV2Resource object at 0x72751050> to path b'/_matrix/key/v2'
+2023-01-07 20:55:38,239 - synapse.app.homeserver - 162 - INFO - None- Synapse now listening on TCP port 8008
+2023-01-07 20:55:38,641 - synapse.storage.background_updates - 110 - INFO - background_updates-0- Starting background schema updates
+2023-01-07 20:55:38,647 - synapse.handlers.deactivate_account - 211 - INFO - user_parter_loop-0- User parter finished: stopping
+2023-01-07 20:55:38,853 - synapse.push.pusherpool - 306 - INFO - start_pushers-0- Started pushers
+2023-01-07 20:55:39,658 - synapse.storage.background_updates - 124 - INFO - background_updates-0- No more background updates to do. Unscheduling background update task.
+2023-01-07 20:56:08,887 - synapse.logging.context - 70 - WARNING - handle_presence_timeouts-0- Re-starting finished log context handle_presence_timeouts-0
+2023-01-07 20:56:29,786 - synapse.access.http.8008 - 316 - INFO - GET-0- 10.8.0.10 - 8008 - {None} Processed request: 0.004sec/-0.001sec (0.000sec, 0.000sec) (0.000sec/0.000sec/0) 195B 200 "GET /_matrix/client/versions HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:30,615 - synapse.access.http.8008 - 316 - INFO - GET-2- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.073sec/-0.000sec (0.002sec, 0.000sec) (0.003sec/0.060sec/1) 22B 200 "GET /_matrix/client/r0/thirdparty/protocols HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:30,689 - synapse.access.http.8008 - 316 - INFO - GET-3- 10.8.0.10 - 8008 - {None} Processed request: 0.004sec/-0.001sec (0.003sec, 0.000sec) (0.000sec/0.000sec/0) 195B 200 "GET /_matrix/client/versions HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:30,737 - synapse.access.http.8008 - 316 - INFO - GET-7- 10.8.0.10 - 8008 - {None} Processed request: 0.002sec/-0.000sec (0.005sec, 0.000sec) (0.000sec/0.000sec/0) 167B 404 "GET /_matrix/client/v3/room_keys/version HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:30,765 - synapse.access.http.8008 - 316 - INFO - GET-8- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.013sec/-0.000sec (0.010sec, 0.000sec) (0.000sec/0.000sec/0) 22B 200 "GET /_matrix/client/r0/voip/turnServer HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:30,780 - synapse.handlers.e2e_keys - 498 - INFO - POST-9- Updating device_keys for device 'VSZYAQICJY' for user @myuser:matrix at 1673150190780
+2023-01-07 20:56:30,866 - synapse.access.http.8008 - 316 - INFO - GET-12- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.049sec/-0.000sec (0.029sec, 0.000sec) (0.004sec/0.013sec/2) 579B 200 "GET /_matrix/client/r0/pushrules/ HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:30,885 - synapse.access.http.8008 - 316 - INFO - POST-9- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.107sec/-0.001sec (0.011sec, 0.015sec) (0.006sec/0.044sec/4) 68B 200 "POST /_matrix/client/r0/keys/upload HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:30,936 - synapse.access.http.8008 - 316 - INFO - GET-15- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.026sec/-0.002sec (0.007sec, 0.007sec) (0.003sec/0.003sec/1) 62B 200 "GET /_matrix/client/r0/user/%40myuser%3Amatrix/filter/1 HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:30,978 - synapse.access.http.8008 - 316 - INFO - GET-13- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.151sec/-0.001sec (0.019sec, 0.003sec) (0.012sec/0.023sec/3) 372B 200 "GET /_matrix/client/r0/rooms/!txuiQICfJKOSmYDVJe%3Amatrix/members?not_membership=leave&at=s34_1152_0_3_78_3_261_76_1 HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [3 dbevts]
+2023-01-07 20:56:31,126 - synapse.access.http.8008 - 316 - INFO - GET-17- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.133sec/-0.001sec (0.041sec, 0.006sec) (0.024sec/0.040sec/5) 300B 200 "GET /_matrix/client/r0/sync?filter=1&timeout=0&since=s34_1152_0_3_78_3_261_76_1 HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:31,686 - synapse.access.http.8008 - 316 - INFO - GET-18- 10.8.0.10 - 8008 - {None} Processed request: 0.072sec/-0.000sec (0.011sec, 0.001sec) (0.006sec/0.020sec/2) 999B 200 "GET /_matrix/media/r0/thumbnail/matrix/kcEBbhHjzbZLpdHbDvxXZwfi?width=32&height=32&method=crop HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:31,739 - synapse.access.http.8008 - 316 - INFO - GET-20- 10.8.0.10 - 8008 - {None} Processed request: 0.092sec/-0.000sec (0.005sec, 0.004sec) (0.005sec/0.028sec/2) 999B 200 "GET /_matrix/media/r0/thumbnail/matrix/kcEBbhHjzbZLpdHbDvxXZwfi?width=14&height=14&method=crop HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:31,746 - synapse.access.http.8008 - 316 - INFO - GET-19- 10.8.0.10 - 8008 - {None} Processed request: 0.117sec/-0.000sec (0.006sec, 0.003sec) (0.004sec/0.009sec/1) 112928B 200 "GET /_matrix/media/r0/download/matrix/kcEBbhHjzbZLpdHbDvxXZwfi HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:31,824 - synapse.access.http.8008 - 316 - INFO - GET-24- 10.8.0.10 - 8008 - {None} Processed request: 0.046sec/-0.000sec (0.013sec, 0.003sec) (0.004sec/0.022sec/2) 999B 200 "GET /_matrix/media/r0/thumbnail/matrix/kcEBbhHjzbZLpdHbDvxXZwfi?width=30&height=30&method=crop HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:31,900 - synapse.access.http.8008 - 316 - INFO - GET-26- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.067sec/-0.001sec (0.010sec, 0.000sec) (0.002sec/0.009sec/1) 147B 200 "GET /_matrix/client/r0/capabilities HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:31,928 - synapse.access.http.8008 - 316 - INFO - GET-28- 10.8.0.10 - 8008 - {None} Processed request: 0.065sec/-0.001sec (0.014sec, 0.000sec) (0.006sec/0.025sec/2) 98B 200 "GET /_matrix/client/r0/profile/%40myuser%3Amatrix HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:31,940 - synapse.access.http.8008 - 316 - INFO - POST-27- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.094sec/-0.000sec (0.009sec, 0.004sec) (0.010sec/0.023sec/2) 22B 200 "POST /_matrix/client/r0/rooms/!txuiQICfJKOSmYDVJe%3Amatrix/read_markers HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:56:35,602 - synapse.access.http.8008 - 316 - INFO - PUT-31- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.006sec/-0.001sec (0.000sec, 0.008sec) (0.000sec/0.000sec/0) 22B 200 "PUT /_matrix/client/r0/presence/%40myuser%3Amatrix/status HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+
+2023-01-07 20:56:42,434 - synapse.http.server - 85 - INFO - GET-33- <XForwardedForRequest at 0x727200b0 method='GET' uri='/_matrix/client/unstable/org.matrix.msc2697.v2/dehydrated_device' clientproto='HTTP/1.1' site='8008'> SynapseError: 404 - No dehydrated device available
+
+2023-01-07 20:56:42,438 - synapse.access.http.8008 - 316 - INFO - GET-33- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.015sec/-0.000sec (0.001sec, 0.001sec) (0.002sec/0.003sec/1) 81B 404 "GET /_matrix/client/unstable/org.matrix.msc2697.v2/dehydrated_device HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+========================================
+2023-01-07 20:57:01,892 - synapse.access.http.8008 - 316 - INFO - GET-29- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 30.019sec/-0.001sec (0.024sec, 0.000sec) (0.000sec/0.000sec/0) 229B 200 "GET /_matrix/client/r0/sync?filter=1&timeout=30000&since=s34_1159_0_3_78_3_261_76_1 HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:57:03,643 - synapse.access.http.8008 - 316 - INFO - GET-39- 10.8.0.10 - 8008 - {None} Processed request: 0.001sec/-0.000sec (0.000sec, 0.000sec) (0.000sec/0.000sec/0) 167B 404 "GET /_matrix/client/v3/room_keys/version HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:57:03,748 - synapse.access.http.8008 - 316 - INFO - POST-38- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.116sec/-0.000sec (0.010sec, 0.007sec) (0.008sec/0.087sec/5) 108B 401 "POST /_matrix/client/unstable/keys/device_signing/upload HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:57:07,359 - synapse.access.http.8008 - 316 - INFO - GET-41- 10.8.0.10 - 8008 - {None} Processed request: 0.001sec/-0.000sec (0.000sec, 0.000sec) (0.000sec/0.000sec/0) 167B 404 "GET /_matrix/client/v3/room_keys/version HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:57:15,777 - synapse.access.http.8008 - 316 - INFO - GET-42- 10.8.0.10 - 8008 - {None} Processed request: 0.031sec/-0.001sec (0.007sec, 0.002sec) (0.003sec/0.012sec/2) 3396B 200 "GET /_matrix/media/r0/thumbnail/matrix/kcEBbhHjzbZLpdHbDvxXZwfi?width=96&height=96&method=crop HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:57:15,826 - synapse.access.http.8008 - 316 - INFO - POST-45- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.030sec/-0.002sec (0.011sec, 0.001sec) (0.002sec/0.018sec/1) 126B 200 "POST /_matrix/client/r0/user/%40myuser%3Amatrix/openid/request_token HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:57:15,836 - synapse.access.http.8008 - 316 - INFO - GET-46- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.021sec/-0.001sec (0.003sec, 0.003sec) (0.002sec/0.006sec/1) 113B 200 "GET /_matrix/client/r0/account/3pid HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:57:15,887 - synapse.access.http.8008 - 316 - INFO - POST-47- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 0.023sec/-0.001sec (0.006sec, 0.000sec) (0.002sec/0.016sec/1) 126B 200 "POST /_matrix/client/r0/user/%40myuser%3Amatrix/openid/request_token HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:57:32,032 - synapse.access.http.8008 - 316 - INFO - GET-35- 10.8.0.10 - 8008 - {@myuser:matrix} Processed request: 30.015sec/-0.001sec (0.024sec, 0.000sec) (0.000sec/0.000sec/0) 229B 200 "GET /_matrix/client/r0/sync?filter=1&timeout=30000&since=s34_1159_0_3_78_3_261_76_1 HTTP/1.1" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:102.0) Gecko/20100101 Firefox/102.0" [0 dbevts]
+2023-01-07 20:57:33,717 - synapse.handlers.presence - 347 - INFO - persist_presence_changes-0- Persisting 1 unpersisted presence updates
