@@ -5,7 +5,7 @@ const fs = require("fs");
 const sdk = require("matrix-js-sdk");
 
 
-const CAPATH="/usr/local/etc/ssl/current/ca.crt";
+const WHITEFLAMECAPATH="/usr/local/etc/ssl/current/ca.crt";
 
 const MATRIXURL  = "https://matrix.mydomain.vpn";
 const MATRIXHOME = MATRIXURL+"/_matrix/client";
@@ -17,40 +17,7 @@ const MATRIXROOMID = "!PUfEKBLsOrcVwwOHOy:matrix.mydomain.vpn";
 debugger;
 
 // Read the self-signed certificate file
-const caCert = fs.readFileSync(CAPATH,'utf8');
-
-
-// Configure the agent with the custom certificate
-const agent = new https.Agent({
-  ca: caCert,
-});
-
-console.log("Testing Self-signed CA Certificate connection to '"+MATRIXURL+"'");
-
-const httpsoptions = {
-  hostname: 'matrix.mydomain.vpn',
-  port: 443,
-  path: '/_matrix/client/r0/login',
-  method: 'GET',
-  agent: agent,
-};
-
-const req = https.request(httpsoptions, (res) => {
-  console.log('Response status code:', res.statusCode);
-  
-  doMatrixLogin();
-  
-
-});
-
-req.on('error', (error) => {
-  console.error('| - Request error:', error);
-  process.exit(1);
-});
-
-req.end();
-
-
+const caCert = fs.readFileSync(WHITEFLAMECAPATH,'utf8');
 
 
 
@@ -62,33 +29,81 @@ function doMatrixLogin()
   console.log("Creating Matrix Client");
   
   debugger;
+
+  const fetchFn = (url, opts) => {
   
-  const client = sdk.createClient({
+    return new Promise((resolve, reject) => {
+    
+      debugger;  // MAKING REQUEST
+      
+      
+      const httpsoptions1 = {
+        ...opts,
+        ca: caCert,
+      };
+      
+    
+      const req = https.request(url, httpsoptions1, (res) => {
+      
+        debugger; // RESPONSE!
+      
+        const chunks = [];
+
+        res.on("data", (chunk) => {
+          chunks.push(chunk);
+        });
+
+        res.on("end", () => {
+          const response = {
+            status: res.statusCode,
+            headers: res.headers,
+            data: Buffer.concat(chunks).toString(),
+          };
+          
+          resolve(response);
+        });
+        
+      });
+
+      req.on("error", (error) => {
+        reject(error);
+      });
+
+
+
+      req.end();
+    });
+  
+  };
+
+  
+  
+  const MATRIXCLIENT = {
     baseUrl: MATRIXURL,
     homeserverUrl: MATRIXHOME,
     verbose: true,
-    agent: agent
-//  accessToken: accessToken,
-//  userId: userId,
-  });
-  
-  const MATRIXCREDS = {
-    user: MATRIXUSER,
-    password: MATRIXPASS,
+    fetchFn,
   };
-
+  
+  
+  const client = sdk.createClient(MATRIXCLIENT);
+  
+  const MATRIXCREDS = { "user": MATRIXUSER, "password": MATRIXPASS };
+  
+  const MATRIXCREDSSTR = JSON.stringify(MATRIXCREDS);
 
 
   // Login with your credentials
   console.log("Logging into '"+MATRIXURL+"'...");
-  console.log("> Credentials: '"+JSON.stringify(MATRIXCREDS)+"'");
+  console.log("  Credentials: '"+MATRIXCREDS+"'");
+  console.log("  Credentials (String): '"+MATRIXCREDSSTR+"'");
 
   var loginResponse = null;
   var accessToken = null;
 
   try 
   {
-      debugger;
+      debugger; // LOGGING IN
 
       client.login("m.login.password", MATRIXCREDS)
         .then((loginResponse) => {
@@ -111,3 +126,6 @@ function doMatrixLogin()
   
 }
 
+
+
+doMatrixLogin();
