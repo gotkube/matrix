@@ -1,8 +1,4 @@
-gotkube's Matrix/Nginx/Element Config Files
--------------------------------------------
+gotkube's Matrix Scripts
+========================
 
-config.json - Element config
-
-homeserver.yaml - Matrix-Synapse Homeserver config
-
-matrix.mydomain.vpn - Nginx domain config; both Element hosting (on port 8000) and Synapse Proxy Forwarding are defined here
+mtxpost.js - First attempt at using/learning the Matrix JS SDK to post encrypted messages to personal homeserver
